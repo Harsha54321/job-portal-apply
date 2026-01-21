@@ -1,0 +1,271 @@
+.apply-page {
+  background: #f4f6f8;
+  min-height: 100vh;
+  padding: 10% 0 40px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+
+.apply-header {
+  max-width: 900px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* BACK BUTTON */
+.back-link {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 6px 14px;
+  border-radius: 18px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* COMPANY HEADER CARD */
+.company-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  padding: 14px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* LOGO IMAGE */
+.company-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+/* LOGO PLACEHOLDER (when no logo) */
+.company-logo.placeholder {
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  border: 1px solid #1E88E5;
+  border-radius: 5px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #1E88E5;
+}
+
+/* CENTER PILL */
+.company-text {
+  background: #eaf4ff;
+  padding: 8px 22px;
+  border-radius: 999px;
+  text-align: center;
+  
+}
+
+.company-text h3 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.company-text p {
+  font-size: 12px;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #555;
+}
+
+/* STAR ICON */
+.company-text img {
+  width: 14px;
+  height: 14px;
+}
+
+/* TAGLINE RIGHT */
+.job-title {
+  margin-left: auto;
+  font-size: 13px;
+  color: #555;
+  white-space: nowrap;
+}
+
+/* Apply CARD */
+
+.apply-container {
+  display: flex;
+  justify-content: center;
+}
+
+.apply-card {
+  width: 900px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* FORM */
+
+.form-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  width: 25%;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.form-input,
+.info-box {
+  width: 65%;
+  box-sizing: border-box;
+}
+
+.form-edit {
+  width: 10%;
+  padding-top: 10px;
+}
+
+.form-edit img {
+  width: 16px;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.form-edit img:hover {
+  opacity: 1;
+}
+
+/* INPUTS */
+.text-input,
+.select-input,
+.file-input {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 6px;
+  border: 1px solid #cfd4da;
+  box-sizing: border-box;
+}
+
+.text-input:disabled,
+.select-input:disabled {
+  background: #f1f3f5;
+}
+
+.mb {
+  margin-bottom: 8px;
+}
+
+.readonly-select {
+  pointer-events: none;
+  background-color: #f5f5f5;
+}
+
+
+/* INFO BOX */
+.info-box {
+  background: #f2f4f7;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  min-height: 120px;
+}
+
+/* RESUME */
+.resume-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #cfd4da;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+/* DELETE BUTTON */
+.remove-btn {
+  /* background: transparent;        */
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* DELETE ICON */
+.remove-btn img {
+  width: 15px;                   
+  height: 15px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* HOVER EFFECT */
+.remove-btn:hover img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+/* BUTTONS */
+.action-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.secondary-btn,
+.primary-btn {
+  width: 50%;
+  padding: 11px;
+  border-radius: 8px;
+  border: none;
+}
+
+.secondary-btn {
+  background: #e4e6eb;
+}
+
+.primary-btn {
+  background: #0d6efd;
+  color: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .apply-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-label,
+  .form-input,
+  .info-box,
+  .form-edit {
+    width: 100%;
+  }
+
+  .form-edit {
+    text-align: right;
+    padding-top: 6px;
+  }
+}
