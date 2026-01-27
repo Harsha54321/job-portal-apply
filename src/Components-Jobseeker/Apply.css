@@ -6,102 +6,45 @@
 }
 
 
-.apply-header {
+.job-header {
   max-width: 900px;
   margin: 0 auto 22px;
-  display: flex;
   align-items: center;
-  gap: 16px;
 }
 
-/* BACK BUTTON */
-.back-link {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  padding: 6px 14px;
-  border-radius: 18px;
-  font-size: 13px;
-  color: #333;
-  cursor: pointer;
-  white-space: nowrap;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-}
-
-/* COMPANY HEADER CARD */
-.company-info {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background: #ffffff;
-  padding: 14px 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* LOGO IMAGE */
-.company-logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 5px;
-  object-fit: contain;
-}
-
-/* LOGO PLACEHOLDER (when no logo) */
-.company-logo.placeholder {
-  width: 60px;
-  height: 60px;
-  font-size: 20px;
-  border: 1px solid #1E88E5;
-  border-radius: 5px;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #1E88E5;
-}
-
-/* CENTER PILL */
-.company-text {
-  background: #eaf4ff;
-  padding: 8px 22px;
-  border-radius: 999px;
-  text-align: center;
-  
-}
-
-.company-text h3 {
-  font-size: 14px;
-  margin: 0;
+.job-title-main {
+  font-size: 26px;
   font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 10px;
 }
 
-.company-text p {
-  font-size: 12px;
-  margin-top: 2px;
+.job-meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 4px;
-  color: #555;
+  gap: 14px;
+  font-size: 14px;
+  color: #6b7280;
 }
 
-/* STAR ICON */
-.company-text img {
-  width: 14px;
-  height: 14px;
+.company-name {
+  font-weight: 600;
+  color: #0f172a;
 }
 
-/* TAGLINE RIGHT */
-.job-title {
-  margin-left: auto;
-  font-size: 13px;
-  color: #555;
+.job-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   white-space: nowrap;
 }
 
-/* Apply CARD */
+.card-icons {
+  height: 16px;
+  margin-right: 7px;
+}
+
 
 .apply-container {
   display: flex;
@@ -116,7 +59,6 @@
   box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
-/* FORM */
 
 .form-row {
   display: flex;
@@ -151,7 +93,31 @@
   opacity: 1;
 }
 
-/* INPUTS */
+.align-top {
+  align-items: flex-start;
+}
+
+.cover-textarea {
+  width: 100%;
+  min-height: 120px;
+  max-height: 400px;
+  resize: vertical;
+  padding: 12px 12px; 
+  font-size: 14px;
+  line-height: 1.6;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+
+.cover-textarea:focus {
+  border-color: #131416;
+  box-shadow: 0 0 0 1px #101011;
+}
+
 .text-input,
 .select-input,
 .file-input {
@@ -171,16 +137,36 @@
   margin-bottom: 8px;
 }
 
-/* INFO BOX */
+
 .info-box {
   background: #f2f4f7;
-  padding: 16px;
+  padding: 16px 18px;        
   border-radius: 10px;
   font-size: 13px;
   min-height: 120px;
+  box-sizing: border-box;
 }
 
-/* RESUME */
+
+.info-box > div {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+
+.info-box strong {
+  min-width: 90px;      
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.info-box div {
+  word-break: break-word; 
+  white-space: normal;      
+}
+
 .resume-box {
   display: flex;
   align-items: center;
@@ -190,9 +176,8 @@
   border-radius: 6px;
 }
 
-/* DELETE BUTTON */
 .remove-btn {
-  /* background: transparent;        */
+
   border: none;
   padding: 4px;
   cursor: pointer;
@@ -201,7 +186,6 @@
   justify-content: center;
 }
 
-/* DELETE ICON */
 .remove-btn img {
   width: 15px;                   
   height: 15px;
@@ -209,43 +193,44 @@
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* HOVER EFFECT */
 .remove-btn:hover img {
   opacity: 1;
   transform: scale(1.1);
 }
 
-
-/* BUTTONS */
 .action-buttons {
   display: flex;
   gap: 14px;
   margin-top: 22px;
+  justify-content: center;
 }
 
-.secondary-btn,
 .primary-btn {
-  width: 50%;
+  width: 120px;
+  height: 40px;
   padding: 11px;
   border-radius: 8px;
   border: none;
-}
-
-.secondary-btn {
-  background: #e4e6eb;
-}
-
-.primary-btn {
+  font-size: 17px;
   background: #0d6efd;
   color: #fff;
 }
 
-/* MOBILE */
+
 @media (max-width: 768px) {
-  .apply-header {
-    flex-direction: column;
-    align-items: flex-start;
+  .job-header {
+    padding: 22px 16px 10px;
   }
+
+  .job-title-main {
+    font-size: 22px;
+  }
+
+  .job-meta {
+    gap: 10px;
+    font-size: 13px;
+  }
+
 
   .form-row {
     flex-direction: column;
