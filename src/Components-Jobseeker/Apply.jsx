@@ -252,11 +252,11 @@ export default function Apply() {
                   </>
                 ) : (
                   <>
-                    <div><strong>Street :</strong> {formData.street}</div>
-                    <div><strong>City :</strong> {formData.city}</div>
-                    <div><strong>State :</strong> {formData.state}</div>
-                    <div><strong>Zip :</strong> {formData.zip}</div>
-                    <div><strong>Country :</strong> {formData.country}</div>
+                    <div><strong>Street</strong><p>:</p> {formData.street}</div>
+                    <div><strong>City</strong><p>:</p> {formData.city}</div>
+                    <div><strong>State</strong><p>:</p> {formData.state}</div>
+                    <div><strong>Zip</strong><p>:</p> {formData.zip}</div>
+                    <div><strong>Country</strong><p>:</p> {formData.country}</div>
                   </>
                 )}
               </div>

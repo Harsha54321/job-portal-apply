@@ -163,6 +163,13 @@
   font-weight: 600;
 }
 
+.apply-form-info-box p {
+  margin: 0px;
+  min-width: 9px;      
+  color: #0f172a;
+  font-weight: 600;
+}
+
 .apply-form-info-box div {
   word-break: break-word; 
   white-space: normal;      
