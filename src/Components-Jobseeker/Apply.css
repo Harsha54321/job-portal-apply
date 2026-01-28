@@ -1,4 +1,4 @@
-.apply-page {
+.apply-form-page {
   background: #f4f6f8;
   min-height: 100vh;
   padding: 10% 0 40px;
@@ -6,20 +6,20 @@
 }
 
 
-.job-header {
+.apply-form-job-header {
   max-width: 900px;
   margin: 0 auto 22px;
   align-items: center;
 }
 
-.job-title-main {
+.apply-form-job-title{
   font-size: 26px;
   font-weight: 600;
   color: #0f172a;
   margin-bottom: 10px;
 }
 
-.job-meta {
+.apply-form-job-meta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -28,30 +28,30 @@
   color: #6b7280;
 }
 
-.company-name {
+.apply-form-company-name {
   font-weight: 600;
   color: #0f172a;
 }
 
-.job-meta span {
+.apply-form-job-meta span {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   white-space: nowrap;
 }
 
-.card-icons {
+.apply-form-card-icons {
   height: 16px;
   margin-right: 7px;
 }
 
 
-.apply-container {
+.apply-form-container {
   display: flex;
   justify-content: center;
 }
 
-.apply-card {
+.apply-form-card {
   width: 900px;
   background: #fff;
   padding: 24px;
@@ -60,36 +60,37 @@
 }
 
 
-.form-row {
+.apply-form-row {
   display: flex;
   align-items: flex-start;
   margin-bottom: 16px;
 }
 
-.form-label {
+.apply-form-label {
   width: 25%;
   font-size: 14px;
   padding-top: 10px;
 }
 
-.form-input,
-.info-box {
+.apply-form-input,
+.apply-form-info-box {
   width: 65%;
   box-sizing: border-box;
 }
 
-.form-edit {
+.apply-form-edit {
   width: 10%;
-  padding-top: 10px;
+  padding-top: 9px;
+  padding-left: 5px;
 }
 
-.form-edit img {
+.apply-form-edit img {
   width: 16px;
   cursor: pointer;
   opacity: 0.75;
 }
 
-.form-edit img:hover {
+.apply-form-edit img:hover {
   opacity: 1;
 }
 
@@ -118,9 +119,9 @@
   box-shadow: 0 0 0 1px #101011;
 }
 
-.text-input,
-.select-input,
-.file-input {
+.apply-form-text-input,
+.apply-form-select-input,
+.apply-form-file-input {
   width: 100%;
   padding: 9px 12px;
   border-radius: 6px;
@@ -128,8 +129,8 @@
   box-sizing: border-box;
 }
 
-.text-input:disabled,
-.select-input:disabled {
+.apply-form-text-input:disabled,
+.apply-form-select-input:disabled {
   background: #f1f3f5;
 }
 
@@ -138,7 +139,7 @@
 }
 
 
-.info-box {
+.apply-form-info-box {
   background: #f2f4f7;
   padding: 16px 18px;        
   border-radius: 10px;
@@ -148,7 +149,7 @@
 }
 
 
-.info-box > div {
+.apply-form-info-box > div {
   display: flex;
   gap: 6px;
   margin-bottom: 6px;
@@ -156,18 +157,18 @@
 }
 
 
-.info-box strong {
+.apply-form-info-box strong {
   min-width: 90px;      
   color: #0f172a;
   font-weight: 600;
 }
 
-.info-box div {
+.apply-form-info-box div {
   word-break: break-word; 
   white-space: normal;      
 }
 
-.resume-box {
+.apply-form-resume-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -176,7 +177,7 @@
   border-radius: 6px;
 }
 
-.remove-btn {
+.apply-form-remove-btn {
 
   border: none;
   padding: 4px;
@@ -186,26 +187,26 @@
   justify-content: center;
 }
 
-.remove-btn img {
+.apply-form-remove-btn img {
   width: 15px;                   
   height: 15px;
   opacity: 0.7;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.remove-btn:hover img {
+.apply-form-remove-btn:hover img {
   opacity: 1;
   transform: scale(1.1);
 }
 
-.action-buttons {
+.apply-form-action-buttons {
   display: flex;
   gap: 14px;
   margin-top: 22px;
   justify-content: center;
 }
 
-.primary-btn {
+.apply-form-primary-btn {
   width: 120px;
   height: 40px;
   padding: 11px;
@@ -218,32 +219,32 @@
 
 
 @media (max-width: 768px) {
-  .job-header {
+  .apply-form-job-header {
     padding: 22px 16px 10px;
   }
 
-  .job-title-main {
+  .apply-form-job-title {
     font-size: 22px;
   }
 
-  .job-meta {
+  .apply-form-job-meta {
     gap: 10px;
     font-size: 13px;
   }
 
 
-  .form-row {
+  .apply-form-row {
     flex-direction: column;
   }
 
-  .form-label,
-  .form-input,
-  .info-box,
-  .form-edit {
+  .apply-form-label,
+  .apply-form-input,
+  .apply-form-info-box,
+  .apply-form-edit {
     width: 100%;
   }
 
-  .form-edit {
+  .apply-form-edit {
     text-align: right;
     padding-top: 6px;
   }

@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { JHeader } from "./JHeader";
 import { Footer } from "../Components-LandingPage/Footer";
-import editIcon from "../assets/EditIcon.png";
+import FormEditIcon from "../assets/FormEdit.png";
 import deleteIcon from "../assets/DeleteIcon.png";
 import time from "../assets/opportunity_time.png";
 import experience from "../assets/opportunity_bag.png";
@@ -20,18 +20,19 @@ export default function Apply() {
   const [editableField, setEditableField] = useState(null);
 
   const [formData, setFormData] = useState({
-    name: "",
-    dob: "",
-    marital: "",
-    mobile: "",
-    email: "",
-    street: "",
-    city: "",
-    state: "",
-    zip: "",
-    country: "",
+    name: "John Christopher",
+    dob: "1963-06-09",
+    marital: "Unmarried",
+    mobile: "8394759682",
+    email: "johnny.depp@gmail.com",
+    street: "B-41, Koteshwar Palace, Koldongri Rd No 4, Opp.Garware House, Andheri(west)",
+    city: "Mumbai",
+    state: "Maharashtra",
+    zip: "400069",
+    country: "India",
     coverLetter: "",
     resume: null,
+    resumeName: "John resume.pdf",
   });
 
   const handleChange = (e) => {
@@ -56,9 +57,17 @@ export default function Apply() {
   };
 
   const removeResume = () => {
-    setFormData((prev) => ({ ...prev, resume: null }));
-    fileInputRef.current.value = "";
+    setFormData({
+      ...formData,
+      resume: null,
+      resumeName: "",
+    });
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
   };
+
 
   const validateForm = () => {
     const requiredFields = [
@@ -125,62 +134,62 @@ export default function Apply() {
     <>
       <JHeader />
 
-      <div className="apply-page">
+      <div className="apply-form-page">
 
-        <div className="job-header">
-          <h1 className="job-title-main">{jobData?.title}</h1>
+        <div className="apply-form-job-header">
+          <h1 className="apply-form-job-title">{jobData?.title}</h1>
 
-          <div className="job-meta">
-            <span className="company-name">{jobData?.company}</span>
-            <span><img src={time} className="card-icons" />{jobData?.duration}</span>
+          <div className="apply-form-job-meta">
+            <span className="apply-form-company-name">{jobData?.company}</span>
+            <span><img src={time} className="apply-form-card-icons" />{jobData?.duration}</span>
             <span>₹ {jobData?.salary} LPA</span>
-            <span><img src={experience} className="card-icons" />{jobData?.experience} years</span>
-            <span><img src={place} className="card-icons" />{jobData?.location}</span>
+            <span><img src={experience} className="apply-form-card-icons" />{jobData?.experience} years</span>
+            <span><img src={place} className="apply-form-card-icons" />{jobData?.location}</span>
           </div>
         </div>
 
-        <div className="apply-container">
-          <form className="apply-card" onSubmit={handleSubmit}>
+        <div className="apply-form-container">
+          <form className="apply-form-card" onSubmit={handleSubmit}>
 
-            <div className="form-row">
-              <div className="form-label">Name</div>
-              <div className="form-input">
+            <div className="apply-form-row">
+              <div className="apply-form-label">Name</div>
+              <div className="apply-form-input">
                 <input
                   type="text"
-                  className="text-input"
+                  className="apply-form-text-input"
                   name="name"
                   disabled={editableField !== "name"}
                   value={formData.name}
                   onChange={handleChange}
                 />
               </div>
-              <div className="form-edit" onClick={() => setEditableField("name")}>
-                <img src={editIcon} alt="edit" />
+              <div className="apply-form-edit" onClick={() => setEditableField("name")}>
+                <img src={FormEditIcon} alt="edit" />
               </div>
             </div>
 
-            <div className="form-row">
-              <div className="form-label">Date of Birth</div>
-              <div className="form-input">
+            <div className="apply-form-row">
+              <div className="apply-form-label">Date of Birth</div>
+              <div className="apply-form-input">
                 <input
                   type="date"
-                  className="text-input"
+                  className="apply-form-text-input"
                   name="dob"
                   disabled={editableField !== "dob"}
                   value={formData.dob}
                   onChange={handleChange}
                 />
               </div>
-              <div className="form-edit" onClick={() => setEditableField("dob")}>
-                <img src={editIcon} alt="edit" />
+              <div className="apply-form-edit" onClick={() => setEditableField("dob")}>
+                <img src={FormEditIcon} alt="edit" />
               </div>
             </div>
 
-            <div className="form-row">
-              <div className="form-label">Marital status</div>
-              <div className="form-input">
+            <div className="apply-form-row">
+              <div className="apply-form-label">Marital status</div>
+              <div className="apply-form-input">
                 <select
-                  className="select-input"
+                  className="apply-form-select-input"
                   name="marital"
                   disabled={editableField !== "marital"}
                   value={formData.marital}
@@ -191,55 +200,55 @@ export default function Apply() {
                   <option>Married</option>
                 </select>
               </div>
-              <div className="form-edit" onClick={() => setEditableField("marital")}>
-                <img src={editIcon} alt="edit" />
+              <div className="apply-form-edit" onClick={() => setEditableField("marital")}>
+                <img src={FormEditIcon} alt="edit" />
               </div>
             </div>
 
-            <div className="form-row">
-              <div className="form-label">Mobile number</div>
-              <div className="form-input">
+            <div className="apply-form-row">
+              <div className="apply-form-label">Mobile number</div>
+              <div className="apply-form-input">
                 <input
                   type="tel"
-                  className="text-input"
+                  className="apply-form-text-input"
                   name="mobile"
                   disabled={editableField !== "mobile"}
                   value={formData.mobile}
                   onChange={handleMobileChange}
                 />
               </div>
-              <div className="form-edit" onClick={() => setEditableField("mobile")}>
-                <img src={editIcon} alt="edit" />
+              <div className="apply-form-edit" onClick={() => setEditableField("mobile")}>
+                <img src={FormEditIcon} alt="edit" />
               </div>
             </div>
 
-            <div className="form-row">
-              <div className="form-label">Mail ID</div>
-              <div className="form-input">
+            <div className="apply-form-row">
+              <div className="apply-form-label">Mail ID</div>
+              <div className="apply-form-input">
                 <input
                   type="email"
-                  className="text-input"
+                  className="apply-form-text-input"
                   name="email"
                   disabled={editableField !== "email"}
                   value={formData.email}
                   onChange={handleChange}
                 />
               </div>
-              <div className="form-edit" onClick={() => setEditableField("email")}>
-                <img src={editIcon} alt="edit" />
+              <div className="apply-form-edit" onClick={() => setEditableField("email")}>
+                <img src={FormEditIcon} alt="edit" />
               </div>
             </div>
 
-            <div className="form-row">
-              <div className="form-label">Current address</div>
-              <div className="info-box">
+            <div className="apply-form-row">
+              <div className="apply-form-label">Current address</div>
+              <div className="apply-form-info-box">
                 {editableField === "address" ? (
                   <>
-                    <input className="text-input mb" name="street" placeholder="Street" value={formData.street} onChange={handleChange} />
-                    <input className="text-input mb" name="city" placeholder="City" value={formData.city} onChange={handleChange} />
-                    <input className="text-input mb" name="state" placeholder="State" value={formData.state} onChange={handleChange} />
-                    <input className="text-input mb" name="zip" placeholder="Zip" value={formData.zip} onChange={handleChange} />
-                    <input className="text-input" name="country" placeholder="Country" value={formData.country} onChange={handleChange} />
+                    <input className="apply-form-text-input mb" name="street" placeholder="Street" value={formData.street} onChange={handleChange} />
+                    <input className="apply-form-text-input mb" name="city" placeholder="City" value={formData.city} onChange={handleChange} />
+                    <input className="apply-form-text-input mb" name="state" placeholder="State" value={formData.state} onChange={handleChange} />
+                    <input className="apply-form-text-input mb" name="zip" placeholder="Zip" value={formData.zip} onChange={handleChange} />
+                    <input className="apply-form-text-input" name="country" placeholder="Country" value={formData.country} onChange={handleChange} />
                   </>
                 ) : (
                   <>
@@ -251,14 +260,14 @@ export default function Apply() {
                   </>
                 )}
               </div>
-              <div className="form-edit" onClick={() => setEditableField("address")}>
-                <img src={editIcon} alt="edit" />
+              <div className="apply-form-edit" onClick={() => setEditableField("address")}>
+                <img src={FormEditIcon} alt="edit" />
               </div>
             </div>
 
-            <div className="form-row align-top">
-              <div className="form-label">Cover letter</div>
-              <div className="form-input">
+            <div className="apply-form-row align-top">
+              <div className="apply-form-label">Cover letter</div>
+              <div className="apply-form-input">
                 <textarea
                   className="cover-textarea"
                   name="coverLetter"
@@ -269,38 +278,46 @@ export default function Apply() {
                   rows={4}
                 />
               </div>
-              <div className="form-edit" onClick={() => setEditableField("coverLetter")}>
-                <img src={editIcon} alt="edit" />
+              <div className="apply-form-edit" onClick={() => setEditableField("coverLetter")}>
+                <img src={FormEditIcon} alt="edit" />
               </div>
             </div>
 
-            <div className="form-row">
-              <div className="form-label">Resume</div>
-              <div className="form-input">
-                {!formData.resume ? (
+            <div className="apply-form-row">
+              <div className="apply-form-label">Resume</div>
+              <div className="apply-form-input">
+                {formData.resume || formData.resumeName ? (
+                  <div className="apply-form-resume-box">
+                    <span>
+                      {formData.resume?.name || formData.resumeName}
+                    </span>
+
+                    <button
+                      type="button"
+                      className="apply-form-remove-btn"
+                      onClick={removeResume}
+                    >
+                      <img src={deleteIcon} alt="delete" />
+                    </button>
+                  </div>
+                ) : (
                   <input
                     type="file"
-                    className="file-input"
+                    className="apply-form-file-input"
                     accept="application/pdf"
                     ref={fileInputRef}
                     onChange={handleResumeUpload}
                   />
-                ) : (
-                  <div className="resume-box">
-                    <span>{formData.resume.name}</span>
-                    <button type="button" className="remove-btn" onClick={removeResume}>
-                      <img src={deleteIcon} alt="delete" />
-                    </button>
-                  </div>
                 )}
               </div>
+
             </div>
 
-            <div className="action-buttons">
+            <div className="apply-form-action-buttons">
               {/* <button type="button" className="secondary-btn" onClick={handleSave}>
                 Save changes
               </button> */}
-              <button type="submit" className="primary-btn">
+              <button type="submit" className="apply-form-primary-btn">
                 Apply
               </button>
             </div>
