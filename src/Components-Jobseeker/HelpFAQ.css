@@ -1,15 +1,13 @@
-/* Container and Layout */
 .main-wrapper {
     background-color: #ffffff;
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
 }
 
-/* Hero Section */
 .hero-section {
     background-size: cover;
     background-position: center;
-    height: 380px; 
+    height: 380px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -37,7 +35,7 @@
     color: white;
     font-size: 2.2rem;
     font-weight: 600;
-    margin: 0; /* Fixed: reset margin for proper alignment */
+    margin: 0;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -69,7 +67,6 @@
     cursor: pointer;
 }
 
-/* Sidebar Styling */
 .support-nav {
     display: flex;
     flex-direction: column;
@@ -78,22 +75,22 @@
 }
 
 .support-label {
-    color: #004a99; 
+    color: #004a99;
     font-size: 0.95rem;
     font-weight: 400;
 }
 
 .back-btn {
-    background: none;
     border: none;
-    color: #004a99;
-    font-size: 1.2rem;
     cursor: pointer;
     width: fit-content;
     padding: 0;
-    text-align: left;
 }
 
+.back-btn img{
+    width: 20px;
+    height: 20px;
+}
 
 .support-label {
     color: #64748b;
@@ -115,7 +112,6 @@
     max-width: 280px;
 }
 
-/* Main Content Grid */
 .main-content {
     max-width: 1200px;
     margin: 50px auto;
@@ -125,7 +121,6 @@
     padding: 0 40px;
 }
 
-/* FAQ Accordion */
 .faq-list {
     display: flex;
     flex-direction: column;
@@ -170,6 +165,7 @@
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
     .hero-stacked-container {
         align-items: center;
         text-align: center;

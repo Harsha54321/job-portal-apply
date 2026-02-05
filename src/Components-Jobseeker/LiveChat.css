@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
 .chat-wrapper {
   display: flex;
   justify-content: center;
@@ -12,12 +17,12 @@
   border-radius: 12px;
   background: #fff;
   display: flex;
+  justify-content: end;
   flex-direction: column;
 }
 
-/* START SCREEN */
 .start-card {
-  margin: 410px 10px 0px 10px;
+  margin: 16px;
   height: 60px;
   border-radius: 12px;
   border-top: 1px solid #ccc;
@@ -38,13 +43,14 @@
   background: #0b5ed7;
   color: #fff;
   border: none;
+  display: flex;
+  gap: 6px;
+  font-size: large;
   padding: 8px 14px;
   border-radius: 6px;
   cursor: pointer;
 }
 
-
-/* CHAT BODY */
 .chat-body {
   flex: 1;
   padding: 16px;
@@ -75,9 +81,8 @@
   margin-left: auto;
 }
 
-/* INPUT */
 .chat-input {
-  margin: 10px;
+  margin: 16px;
   display: flex;
   gap: 8px;
   padding: 10px;
@@ -99,22 +104,55 @@
   padding: 8px 14px;
   border: none;
   border-radius: 6px;
+  display: flex;
+  gap: 6px;
+  font-size: large;
   background: #0b5ed7;
   color: #fff;
   cursor: pointer;
+}
+
+.send-icon{
+  width: 20px;
+  height: 20px;
 }
 
 .end-btn {
   background: #dc3545 !important;
 }
 
-/* END SCREEN */
-.end-screen {
-  margin: auto;
+.chat-complete {
+  margin-top: 12px;
+  padding: 12px;
   text-align: center;
+  color: #555;
+  font-size: 14px;
 }
 
-/* MODAL */
+.chat-complete-button button {
+  
+  background: #0b5ed7;
+  color: #fff;
+  border: none;
+  display: flex;
+  gap: 6px;
+  font-size: large;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.chat-complete-button{
+  
+  height: 60px;
+  border-radius: 12px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 0 16px;
+  background: #0f172a;
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -131,18 +169,28 @@
   text-align: center;
 }
 
-.stars span {
-  font-size: 28px;
+.stars {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 5px;
   cursor: pointer;
-  color: #ccc;
 }
 
-.stars .active {
-  color: gold;
+.star img {
+  width: 28px;   
+  height: 28px;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
+
+.star:hover img {
+  transform: scale(1.15);
+}
+
 
 .modal textarea {
-  width: 100%;
+  width: 300px;
   margin: 12px 0;
   height: 80px;
 }

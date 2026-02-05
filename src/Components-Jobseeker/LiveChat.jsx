@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import "./LiveChat.css";
 import { JHeader } from "./JHeader";
 import { Footer } from "../Components-LandingPage/Footer";
+import SilverStar from "../assets/SilverStar.png"
+import GoldStar from "../assets/GoldStar.png"
+import SendIcon from "../assets/SendIcon.png"
 
 
 const TypingDots = () => {
@@ -15,7 +18,7 @@ const TypingDots = () => {
 };
 
 const LiveChat = () => {
-  const [step, setStep] = useState("INIT"); // INIT | CHAT | ENDED
+  const [step, setStep] = useState("INIT"); 
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
 
@@ -75,8 +78,12 @@ const LiveChat = () => {
   };
 
   const endConversation = () => {
-    setStep("ENDED");
     setShowFeedback(true);
+  };
+
+  const handleFeedbackSubmit = () => {
+    setShowFeedback(false);
+    setStep("ENDED");
   };
 
   return (
@@ -85,27 +92,23 @@ const LiveChat = () => {
 
       <div className="chat-wrapper">
         <div className="chat-box">
-
-          {/* INIT STATE */}
           {step === "INIT" && (
             <div className="start-card">
               <p>Tell us what's going on</p>
               <button onClick={startConversation}>
-                Start conversation
+                Start conversation <img className="send-icon" src={SendIcon} alt="SendTo" />
               </button>
             </div>
 
           )}
 
-          {/* CHAT STATE */}
-          {step === "CHAT" && (
+          {step !== "INIT" && (
             <>
               <div className="chat-body">
                 {messages.map((msg, i) => (
                   <div
                     key={i}
-                    className={`chat-msg ${msg.from === "user" ? "user" : "bot"
-                      }`}
+                    className={`chat-msg ${msg.from === "user" ? "user" : "bot"}`}
                   >
                     <span>{msg.text}</span>
                   </div>
@@ -113,39 +116,47 @@ const LiveChat = () => {
 
                 {isTyping && <TypingDots />}
 
+                {step === "ENDED" && (
+                  <div>
+                    <div className="chat-complete">
+                    <p>Bot has ended your conversation</p>
+                  </div>
+                  <div className="chat-complete-button">
+                      <button onClick={startConversation}>
+                        Start new conversation <img className="send-icon" src={SendIcon} alt="SendTo" />
+                      </button>
+                    </div>
+                  </div>
+                  
+                )}
+
                 <div ref={chatEndRef} />
               </div>
 
-              <div className="chat-input">
-                <input
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder="Type your message..."
-                  disabled={isTyping}
-                />
-                <button onClick={handleSend}>Send</button>
-                <button
-                  className="end-btn"
-                  onClick={endConversation}
-                >
-                  End
-                </button>
-              </div>
+              {step === "CHAT" && (
+                <div className="chat-input">
+                  <input
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    placeholder="Type your message..."
+                    disabled={isTyping}
+                  />
+                  <button onClick={handleSend}>Send <img className="send-icon" src={SendIcon} alt="SendTo" /></button>
+                  <button
+                    className="end-btn"
+                    onClick={endConversation}
+                  >
+                    End
+                  </button>
+                </div>
+              )}
             </>
           )}
 
-          {/* ENDED STATE */}
-          {step === "ENDED" && (
-            <div className="end-screen">
-              <p>Bot has ended your conversation</p>
-              <button onClick={startConversation}>
-                Start new conversation
-              </button>
-            </div>
-          )}
+
+
         </div>
 
-        {/* FEEDBACK MODAL */}
         {showFeedback && (
           <div className="modal-overlay">
             <div className="modal">
@@ -155,13 +166,17 @@ const LiveChat = () => {
                 {[1, 2, 3, 4, 5].map((num) => (
                   <span
                     key={num}
-                    className={rating >= num ? "active" : ""}
+                    className="star"
                     onClick={() => setRating(num)}
                   >
-                    ★
+                    <img
+                      src={rating >= num ? GoldStar : SilverStar}
+                      alt="star"
+                    />
                   </span>
                 ))}
               </div>
+
 
               <textarea
                 placeholder="Your feedback..."
@@ -169,7 +184,7 @@ const LiveChat = () => {
                 onChange={(e) => setFeedback(e.target.value)}
               />
 
-              <button onClick={() => setShowFeedback(false)}>
+              <button onClick={handleFeedbackSubmit}>
                 Submit
               </button>
             </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './HelpFAQ.css';
 import faqImage from '../assets/FAQPage.png';
+import BackIcon from '../assets/BackIcon.png';
 import { JHeader } from './JHeader';
 import { Footer } from '../Components-LandingPage/Footer';
 
@@ -48,7 +49,7 @@ export const HelpFAQ = () => {
                         <aside className="sidebar">
                             <div className="support-nav">
                                 <button className="back-btn" onClick={() => window.history.back()}>
-                                    <span className="icon">↩</span>
+                                    <img src={BackIcon} alt="Back" />
                                 </button>
                                 <div className="support-label">Support</div>
                             </div>

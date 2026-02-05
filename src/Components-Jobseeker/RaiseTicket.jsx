@@ -43,7 +43,6 @@ export const RaiseTicket = () => {
 
     const handleConfirm = () => {
         setStep('loading');
-        // Simulate API Call
         setTimeout(() => {
             setStep('success');
             setTimeout(() => {
@@ -51,7 +50,7 @@ export const RaiseTicket = () => {
             }, 2000);
         }, 1500);
     };
-    // if (step === 'loading' || step === 'success') {
+
     if (step === 'success') {
         return (
             <div>
@@ -63,7 +62,7 @@ export const RaiseTicket = () => {
                         <div className="success-msg">
                             <img src={Reportsubmitted} alt="ReportSubmitted" />
                             <h2> Report Submitted Successfully</h2>
-                            {/* <p>Redirecting to landing page...</p> */}
+
                         </div>
                     )}
                 </div>
@@ -87,7 +86,7 @@ export const RaiseTicket = () => {
 
                     <div className="ticket-card">
                         <form onSubmit={handleSubmitClick}>
-                            {/* Category Select */}
+
                             <div className="form-group">
                                 <label>Category*</label>
                                 <div className={`custom-select ${showCategory ? 'open' : ''}`} onClick={() => setShowCategory(!showCategory)}>
@@ -102,7 +101,7 @@ export const RaiseTicket = () => {
                                 </div>
                             </div>
 
-                            {/* Subject Select */}
+
                             <div className="form-group">
                                 <label>Subject*</label>
                                 <div className={`custom-select ${showSubject ? 'open' : ''}`} onClick={() => setShowSubject(!showSubject)}>
