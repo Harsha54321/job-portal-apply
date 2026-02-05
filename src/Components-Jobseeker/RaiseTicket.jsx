@@ -1,0 +1,175 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Reportsubmitted from '../assets/Report_Submitted.png'
+import './RaiseTicket.css';
+import { Footer } from '../Components-LandingPage/Footer';
+import { JHeader } from './JHeader';
+
+
+
+export const RaiseTicket = () => {
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        category: '',
+        subject: '',
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+    });
+
+    const [step, setStep] = useState('form');
+    const [showCategory, setShowCategory] = useState(false);
+    const [showSubject, setShowSubject] = useState(false);
+
+    const subjects = [
+        "Broken 'Apply' Button/Application Failure",
+        "File Upload/Resume Parsing Errors",
+        "Outdated or Ghost Job Listings",
+        "Incorrect/Irrelevant Search Results & Filters",
+        "Profile Update/Saved Data Not Saving",
+        "Application Status Unchanged/Limbo",
+        "Broken Job Alerts & Notifications",
+        "Login/Registration Issues (Social Login Bugs)",
+        "Site Incompatibility/Non-Responsive Mobile Layout",
+        "Duplicate Job Listings (Spam)",
+        "Others"
+    ];
+
+    const handleSubmitClick = (e) => {
+        e.preventDefault();
+        setStep('confirming');
+    };
+
+    const handleConfirm = () => {
+        setStep('loading');
+        // Simulate API Call
+        setTimeout(() => {
+            setStep('success');
+            setTimeout(() => {
+                navigate('/Job-portal/jobseeker/help-center');
+            }, 2000);
+        }, 1500);
+    };
+    // if (step === 'loading' || step === 'success') {
+    if (step === 'success') {
+        return (
+            <div>
+                <JHeader />
+                <div className="status-container">
+                    {step === 'loading' ? (
+                        <div className="loader"></div>
+                    ) : (
+                        <div className="success-msg">
+                            <img src={Reportsubmitted} alt="ReportSubmitted" />
+                            <h2> Report Submitted Successfully</h2>
+                            {/* <p>Redirecting to landing page...</p> */}
+                        </div>
+                    )}
+                </div>
+                <Footer/>
+            </div>
+
+        );
+    }
+
+    return (
+        <div>
+            <JHeader />
+            <div className="main-wrapper">
+
+                <div className="ticket-page">
+                    <div className="ticket-header">
+                        <h1>Ticket Raise</h1>
+                        <p>We're here to help.</p>
+                        <p>Raise a ticket and we'll get back to you soon</p>
+                    </div>
+
+                    <div className="ticket-card">
+                        <form onSubmit={handleSubmitClick}>
+                            {/* Category Select */}
+                            <div className="form-group">
+                                <label>Category*</label>
+                                <div className={`custom-select ${showCategory ? 'open' : ''}`} onClick={() => setShowCategory(!showCategory)}>
+                                    {formData.category || "Select type"}
+                                    <div className="arrow-icon"></div>
+                                    {showCategory && (
+                                        <ul className="options">
+                                            <li onClick={() => setFormData({ ...formData, category: 'Jobseeker' })}>Jobseeker</li>
+                                            <li onClick={() => setFormData({ ...formData, category: 'Employer' })}>Employer</li>
+                                        </ul>
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* Subject Select */}
+                            <div className="form-group">
+                                <label>Subject*</label>
+                                <div className={`custom-select ${showSubject ? 'open' : ''}`} onClick={() => setShowSubject(!showSubject)}>
+                                    {formData.subject || "Select an issue"}
+                                    <div className="arrow-icon"></div>
+                                    {showSubject && (
+                                        <ul className="options scrollable">
+                                            {subjects.map(s => (
+                                                <li key={s} onClick={() => setFormData({ ...formData, subject: s })}>{s}</li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
+                            </div>
+
+                            <div className="form-group">
+                                <label>Name*</label>
+                                <input type="text" placeholder="Enter full name" required
+                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+                            </div>
+
+                            <div className="form-group">
+                                <label>Email*</label>
+                                <input type="email" placeholder="Enter email ID" required
+                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+                            </div>
+
+                            <div className="form-group">
+                                <label>Phone number*</label>
+                                <input type="tel" placeholder="Enter phone number" required
+                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
+                            </div>
+
+                            <div className="form-group">
+                                <label>Message</label>
+                                <textarea placeholder="Describe the issue here..." rows="4"
+                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}></textarea>
+                            </div>
+
+                            <div className="form-group">
+                                <label>Attachment</label>
+                                <div className="file-input">Click to attach a file</div>
+                                <small className="file-info">Accepted formats: PDF, DOC, DOCX, TXT, PNG, JPG (Max 10MB)</small>
+                            </div>
+
+                            <div className="form-actions">
+                                <button type="button" className="btn-cancel" onClick={() => navigate(-1)}>Cancel</button>
+                                <button type="submit" className="btn-submit">▶ Submit</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    {step === 'confirming' && (
+                        <div className="modal-overlay">
+                            <div className="modal">
+                                <h3>Please confirm before submit</h3>
+                                <div className="modal-buttons">
+                                    <button className="btn-yes" onClick={handleConfirm}>Yes</button>
+                                    <button className="btn-no" onClick={() => setStep('form')}>No</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+            </div>
+            <Footer />
+        </div>
+    );
+};

@@ -52,7 +52,7 @@ export const AvatarMenu = () => {
             Settings
           </Link>
 
-          <Link to="" className="menu-item">
+          <Link to="/Job-portal/jobseeker/help-center" className="menu-item">
             <img src={helpIcon} className="menu-icon" alt="help" />
             Help Centre
           </Link>

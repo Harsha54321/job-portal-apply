@@ -20,6 +20,10 @@ import { JobsThroughCompany } from './Components-Jobseeker/JobsThroughCompany'
 import { AboutUs } from './Components-LandingPage/AboutUs'
 import Apply from './Components-Jobseeker/Apply'
 import AppliedSuccessfull from './Components-Jobseeker/AppliedSuccessfull'
+import HelpCenter from './Components-Jobseeker/HelpCenter'
+import {RaiseTicket} from './Components-Jobseeker/RaiseTicket'
+import { HelpFAQ } from './Components-Jobseeker/HelpFAQ'
+import LiveChat from './Components-Jobseeker/LiveChat'
 
 const router = createBrowserRouter([{
   path: '/Job-portal',
@@ -88,6 +92,22 @@ const router = createBrowserRouter([{
 {
   path: '/Job-portal/jobseeker/myprofile',
   element: <MyProfile />,
+},
+{
+  path: '/Job-portal/jobseeker/help-center',
+  element: <HelpCenter />,
+},
+{
+  path: '/Job-portal/jobseeker/help-center/raise-a-ticket',
+  element: <RaiseTicket />,
+},
+{
+  path: '/Job-portal/jobseeker/help-center/help-FAQs',
+  element: <HelpFAQ />,
+},
+{
+  path:'/Job-portal/jobseeker/help-center/live-chat',
+  element: <LiveChat />,
 },
 {
   path: '/Job-portal/aboutus',
