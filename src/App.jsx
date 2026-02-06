@@ -25,6 +25,7 @@ import {RaiseTicket} from './Components-Jobseeker/RaiseTicket'
 import { HelpFAQ } from './Components-Jobseeker/HelpFAQ'
 import LiveChat from './Components-Jobseeker/LiveChat'
 import ProfileCreationHelp from './Components-Jobseeker/ProfileCreationHelp'
+import ResumeUploadHelp from './Components-Jobseeker/ResumeUploadHelp'
 
 const router = createBrowserRouter([{
   path: '/Job-portal',
@@ -113,6 +114,10 @@ const router = createBrowserRouter([{
 {
   path:'/Job-portal/jobseeker/help-center/profile-creation-help',
   element: <ProfileCreationHelp />,
+},
+{
+  path:'/Job-portal/jobseeker/help-center/resume-upload-help',
+  element: <ResumeUploadHelp />,
 },
 {
   path: '/Job-portal/aboutus',

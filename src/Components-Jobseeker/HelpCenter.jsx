@@ -56,9 +56,13 @@ export default function HelpCenter() {
 
                             {openIndex === 0 && (
                                 <div className="hc-submenu">
-                                    <Link to='/Job-portal/jobseeker/help-center/profile-creation-help' className="hc-submenu-link" ><div className="hc-submenu-item">Profile creation</div></Link>
-                                    
-                                    <div className="hc-submenu-item">Resume upload</div>
+                                    <Link to='/Job-portal/jobseeker/help-center/profile-creation-help' className="hc-submenu-link" >
+                                        <div className="hc-submenu-item">Profile creation</div>
+                                    </Link>
+                                    <Link to='/Job-portal/jobseeker/help-center/resume-upload-help' className="hc-submenu-link" >
+                                        <div className="hc-submenu-item">Resume upload</div>
+                                    </Link>
+
                                     <div className="hc-submenu-item">Job apply issues</div>
                                     <div className="hc-submenu-item">Interview scheduling</div>
                                 </div>
