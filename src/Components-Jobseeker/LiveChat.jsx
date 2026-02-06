@@ -18,7 +18,8 @@ const TypingDots = () => {
 };
 
 const LiveChat = () => {
-  const [step, setStep] = useState("INIT"); 
+  const chatBodyRef = useRef(null);
+  const [step, setStep] = useState("INIT");
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
 
@@ -27,11 +28,14 @@ const LiveChat = () => {
   const [rating, setRating] = useState(0);
   const [feedback, setFeedback] = useState("");
 
-  const chatEndRef = useRef(null);
 
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, isTyping]);
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTop =
+        chatBodyRef.current.scrollHeight;
+    }
+  }, [messages, isTyping, step]);
+
 
   const startConversation = () => {
     setStep("CHAT");
@@ -104,7 +108,9 @@ const LiveChat = () => {
 
           {step !== "INIT" && (
             <>
-              <div className="chat-body">
+              <div className="chat-body" ref={chatBodyRef}>
+                <div className="chat-spacer" />
+
                 {messages.map((msg, i) => (
                   <div
                     key={i}
@@ -117,20 +123,11 @@ const LiveChat = () => {
                 {isTyping && <TypingDots />}
 
                 {step === "ENDED" && (
-                  <div>
-                    <div className="chat-complete">
+                  <div className="chat-complete">
                     <p>Bot has ended your conversation</p>
                   </div>
-                  <div className="chat-complete-button">
-                      <button onClick={startConversation}>
-                        Start new conversation <img className="send-icon" src={SendIcon} alt="SendTo" />
-                      </button>
-                    </div>
-                  </div>
-                  
                 )}
-
-                <div ref={chatEndRef} />
+                <div ref={chatBodyRef} />
               </div>
 
               {step === "CHAT" && (
@@ -141,17 +138,26 @@ const LiveChat = () => {
                     placeholder="Type your message..."
                     disabled={isTyping}
                   />
-                  <button onClick={handleSend}>Send <img className="send-icon" src={SendIcon} alt="SendTo" /></button>
-                  <button
-                    className="end-btn"
-                    onClick={endConversation}
-                  >
+                  <button onClick={handleSend}>
+                    Send <img className="send-icon" src={SendIcon} />
+                  </button>
+                  <button className="end-btn" onClick={endConversation}>
                     End
+                  </button>
+                </div>
+              )}
+
+              {step === "ENDED" && (
+                <div className="chat-end-bar">
+                  <button onClick={startConversation}>
+                    Start new conversation
+                    <img className="send-icon" src={SendIcon} />
                   </button>
                 </div>
               )}
             </>
           )}
+
 
 
 

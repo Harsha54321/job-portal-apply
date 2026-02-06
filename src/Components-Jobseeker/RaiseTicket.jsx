@@ -149,7 +149,7 @@ export const RaiseTicket = () => {
 
                             <div className="form-actions">
                                 <button type="button" className="btn-cancel" onClick={() => navigate(-1)}>Cancel</button>
-                                <button type="submit" className="btn-submit">▶ Submit</button>
+                                <button type="submit" className="btn-submit">Submit</button>
                             </div>
                         </form>
                     </div>

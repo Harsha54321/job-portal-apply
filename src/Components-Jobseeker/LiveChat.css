@@ -56,11 +56,14 @@
   padding: 16px;
   overflow-y: auto;
   background: #f4f6f8;
+
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
 }
 
+.chat-spacer {
+  flex: 1;
+}
 
 .chat-msg {
   max-width: 65%;
@@ -129,8 +132,21 @@
   font-size: 14px;
 }
 
-.chat-complete-button button {
-  
+.chat-end-bar {
+  margin: 16px;
+  height: 60px;
+  border-radius: 12px;
+  border-top: 1px solid #ccc;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 16px;
+
+  background: #0f172a;
+}
+
+.chat-end-bar button {
   background: #0b5ed7;
   color: #fff;
   border: none;
@@ -141,17 +157,7 @@
   border-radius: 6px;
   cursor: pointer;
 }
-.chat-complete-button{
-  
-  height: 60px;
-  border-radius: 12px;
-  border-top: 1px solid #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  padding: 0 16px;
-  background: #0f172a;
-}
+
 
 .modal-overlay {
   position: fixed;
