@@ -26,6 +26,15 @@ import { HelpFAQ } from './Components-Jobseeker/HelpFAQ'
 import LiveChat from './Components-Jobseeker/LiveChat'
 import ProfileCreationHelp from './Components-Jobseeker/ProfileCreationHelp'
 import ResumeUploadHelp from './Components-Jobseeker/ResumeUploadHelp'
+import JobApplyIssuesHelp from './Components-Jobseeker/JobApplyIssuesHelp'
+import InterviewSchedulingHelp from './Components-Jobseeker/InterviewSchedulingHelp'
+import JobPostingHelp from './Components-Jobseeker/JobPostingHelp'
+import CandidateSearchHelp from './Components-Jobseeker/CandidateSearchHelp'
+import SubscriptionIssuesHelp from './Components-Jobseeker/SubscriptionIssuesHelp'
+import InvoicePaymentHelp from './Components-Jobseeker/InvoicePaymentHelp'
+import LoginIssuesHelp from './Components-Jobseeker/LoginIssuesHelp'
+import PageErrorsHelp from './Components-Jobseeker/PageErrorsHelp'
+import FileUploadHelp from './Components-Jobseeker/FileUploadHelp'
 
 const router = createBrowserRouter([{
   path: '/Job-portal',
@@ -118,6 +127,42 @@ const router = createBrowserRouter([{
 {
   path:'/Job-portal/jobseeker/help-center/resume-upload-help',
   element: <ResumeUploadHelp />,
+},
+{
+  path:'/Job-portal/jobseeker/help-center/job-apply-help',
+  element: <JobApplyIssuesHelp />,
+},
+{
+  path:'/Job-portal/jobseeker/help-center/interview-scheduling-help',
+  element: <InterviewSchedulingHelp />,
+},
+{
+  path:'/Job-portal/jobseeker/help-center/job-posting-help',
+  element: <JobPostingHelp />,
+},
+{
+  path:'/Job-portal/jobseeker/help-center/candidate-search-help',
+  element: <CandidateSearchHelp />,
+},
+{
+  path:'/Job-portal/jobseeker/help-center/subscription-issue-help',
+  element: <SubscriptionIssuesHelp />,
+},
+{
+  path:'/Job-portal/jobseeker/help-center/invoice-payment-help',
+  element: <InvoicePaymentHelp />,
+},
+{
+  path:'/Job-portal/jobseeker/help-center/login-issue-help',
+  element: <LoginIssuesHelp />,
+},
+{
+  path:'/Job-portal/jobseeker/help-center/page-error-help',
+  element: <PageErrorsHelp />,
+},
+{
+  path:'/Job-portal/jobseeker/help-center/file-upload-help',
+  element: <FileUploadHelp />,
 },
 {
   path: '/Job-portal/aboutus',

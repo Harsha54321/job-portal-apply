@@ -5,14 +5,14 @@
 }
 
 .resumehelp-page {
-    padding: 0 120px;
+    margin-top: 102px;
     background: #f4f6f8;
     min-height: 100vh;
 }
 
 .resumehelp-container {
-
-    margin: 102px auto 0;
+    max-width: 920px;
+    margin: 0 120px;
     background: #ffffff;
     padding: 40px 100px 100px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);

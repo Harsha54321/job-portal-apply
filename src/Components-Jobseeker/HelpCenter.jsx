@@ -62,9 +62,12 @@ export default function HelpCenter() {
                                     <Link to='/Job-portal/jobseeker/help-center/resume-upload-help' className="hc-submenu-link" >
                                         <div className="hc-submenu-item">Resume upload</div>
                                     </Link>
-
-                                    <div className="hc-submenu-item">Job apply issues</div>
-                                    <div className="hc-submenu-item">Interview scheduling</div>
+                                    <Link to='/Job-portal/jobseeker/help-center/job-apply-help' className="hc-submenu-link" >
+                                        <div className="hc-submenu-item">Job apply issues</div>
+                                    </Link>
+                                    <Link to='/Job-portal/jobseeker/help-center/interview-scheduling-help' className="hc-submenu-link" >
+                                        <div className="hc-submenu-item">Interview scheduling</div>
+                                    </Link>
                                 </div>
                             )}
 
@@ -80,10 +83,18 @@ export default function HelpCenter() {
 
                             {openIndex === 1 && (
                                 <div className="hc-submenu">
-                                    <div className="hc-submenu-item">Job posting</div>
-                                    <div className="hc-submenu-item">Candidate search</div>
-                                    <div className="hc-submenu-item">Subscription issues</div>
-                                    <div className="hc-submenu-item">Invoice & payment</div>
+                                    <Link to='/Job-portal/jobseeker/help-center/job-posting-help' className="hc-submenu-link" >
+                                        <div className="hc-submenu-item">Job posting</div>
+                                    </Link>
+                                    <Link to='/Job-portal/jobseeker/help-center/candidate-search-help' className="hc-submenu-link" >
+                                        <div className="hc-submenu-item">Candidate search</div>
+                                    </Link>
+                                    <Link to='/Job-portal/jobseeker/help-center/subscription-issue-help' className="hc-submenu-link" >
+                                        <div className="hc-submenu-item">Subscription issues</div>
+                                    </Link>
+                                    <Link to='/Job-portal/jobseeker/help-center/invoice-payment-help' className="hc-submenu-link" >
+                                        <div className="hc-submenu-item">Invoice & payment</div>
+                                    </Link>                                   
                                 </div>
                             )}
 
@@ -99,9 +110,15 @@ export default function HelpCenter() {
 
                             {openIndex === 2 && (
                                 <div className="hc-submenu">
-                                    <div className="hc-submenu-item">Login issues</div>
-                                    <div className="hc-submenu-item">Page errors</div>
-                                    <div className="hc-submenu-item">File upload problems</div>
+                                    <Link to='/Job-portal/jobseeker/help-center/login-issue-help' className="hc-submenu-link" >
+                                        <div className="hc-submenu-item">Login issues</div>
+                                    </Link> 
+                                    <Link to='/Job-portal/jobseeker/help-center/page-error-help' className="hc-submenu-link" >
+                                        <div className="hc-submenu-item">Page errors</div>
+                                    </Link> 
+                                    <Link to='/Job-portal/jobseeker/help-center/file-upload-help' className="hc-submenu-link" >
+                                        <div className="hc-submenu-item">File upload problems</div>
+                                    </Link>  
                                 </div>
                             )}
 
