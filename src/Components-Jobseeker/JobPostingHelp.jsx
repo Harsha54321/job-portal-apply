@@ -1,10 +1,10 @@
 import React from "react";
-import { JHeader } from "./JHeader"; 
+import { JHeader } from "./JHeader";
 import { Footer } from "../Components-LandingPage/Footer";
-import "./JobEmployerHelp.css"; 
+import "./JobEmployerHelp.css";
 import JobPostingImg from "../assets/jobposting.png";
 
-export default function JobPostingHelp() {
+export const JobPostingHelp = () => {
   const employerData = {
     title: "How to post a job",
     updatedDate: "Updated 06 Feb 2026",
@@ -37,24 +37,24 @@ export default function JobPostingHelp() {
   };
 
   return (
-    <div className="profilehelp-page">
+    <div className="jobemployerhelp-page">
       <JHeader />
-      <div className="profilehelp-container">
-        <h1 className="profilehelp-title">{employerData.title}</h1>
-        <p className="profilehelp-updated">{employerData.updatedDate}</p>
-        <p className="profilehelp-intro">{employerData.intro}</p>
+      <div className="jobemployerhelp-container">
+        <h1 className="jobemployerhelp-title">{employerData.title}</h1>
+        <p className="jobemployerhelp-updated">{employerData.updatedDate}</p>
+        <p className="jobemployerhelp-intro">{employerData.intro}</p>
 
-        <div className="profilehelp-hero">
+        <div className="jobemployerhelp-hero">
           <img
             src={JobPostingImg}
             alt="Job Posting Instructions"
-            className="profilehelp-hero-img"
+            className="jobemployerhelp-hero-img"
           />
         </div>
 
-        <div className="profilehelp-content">
+        <div className="jobemployerhelp-content">
           {employerData.sections.map((section, index) => (
-            <div key={index} className="profilehelp-section">
+            <div key={index} className="jobemployerhelp-section">
               <h2>{section.title}</h2>
               {section.list && (
                 <ul>

@@ -6,22 +6,20 @@
     
 }
 
-.help-page {
+.Jobseekerhelp-page {
     margin-top: 102px;
-    background: #f4f6f8;
-    min-height: 100vh;
+
     padding-bottom: 50px;
 }
 
-.help-container {
-    max-width: 920px;
-    margin: 0 auto;
+.Jobseekerhelp-container {
+
     background: #ffffff;
     padding: 40px 100px 100px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+
 }
 
-.help-title {
+.Jobseekerhelp-title {
     color: #0f172a;
     margin-bottom: 28px;
     display: flex;
@@ -31,83 +29,55 @@
     text-align: center;
 }
 
-.help-updated {
+.Jobseekerhelp-updated {
     font-size: 13px;
     color: #64748b;
     margin-bottom: 20px;
 }
 
-.help-intro {
+.Jobseekerhelp-intro {
     font-size: 15px;
     line-height: 1.7;
     color: #334155;
     margin-bottom: 30px;
 }
 
-.help-hero {
+.Jobseekerhelp-hero {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
 }
 
-.help-hero-img {
+.Jobseekerhelp-hero-img {
     max-width: 450px;
     width: 100%;
     height: auto;
     border-radius: 6px;
 }
 
-/* Content Sections */
-.help-section h2 {
+.Jobseekerhelp-section h2 {
     font-size: 20px;
     font-weight: 600;
     color: #0f172a;
     margin: 32px 0 12px;
 }
 
-.help-section p {
+.Jobseekerhelp-section p {
     font-size: 15px;
     color: #334155;
     line-height: 1.7;
     margin-bottom: 14px;
 }
 
-.help-section ul {
+.Jobseekerhelp-section ul {
     padding-left: 20px;
     margin-bottom: 18px;
 }
 
-.help-section ul li {
+.Jobseekerhelp-section ul li {
     font-size: 15px;
     color: #334155;
     margin-bottom: 10px;
     line-height: 1.6;
 }
 
-.issue-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.issue-card {
-    border-left: 4px solid #3b82f6;
-    background: #f8fafc;
-    padding: 20px;
-    border-radius: 0 8px 8px 0;
-}
-
-.issue-card h3 {
-    font-size: 18px;
-    color: #1e293b;
-    margin-bottom: 8px;
-}
-
-.issue-card p {
-    margin-bottom: 6px !important;
-}
-
-.issue-card strong {
-    color: #0f172a;
-}

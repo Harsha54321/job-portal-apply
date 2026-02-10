@@ -1,10 +1,10 @@
 import React from "react";
-import { JHeader } from "./JHeader"; 
+import { JHeader } from "./JHeader";
 import { Footer } from "../Components-LandingPage/Footer";
-import "./TechnicalIssues.css"; 
+import "./TechnicalIssues.css";
 import LoginSupportImg from "../assets/loginissue.png";
 
-export default function LoginIssuesHelp() {
+export const LoginIssuesHelp = () => {
   const loginIssueData = {
     title: "Common Login Issues & Root Causes",
     updatedDate: "Updated 06 Feb 2026",
@@ -80,9 +80,9 @@ export default function LoginIssuesHelp() {
         </div>
 
         <div className="technicalhelp-content">
-          <div className="issue-grid">
+          <div className="technicalissue-grid">
             {loginIssueData.issues.map((item, index) => (
-              <div key={index} className="issue-card">
+              <div key={index} className="technicalissue-card">
                 <h3>{item.problem}</h3>
                 <p><strong>Why this happens:</strong> {item.why}</p>
                 <p><strong>Root Cause:</strong> {item.rootCause}</p>

@@ -1,10 +1,10 @@
 import React from "react";
-import { JHeader } from "./JHeader"; 
+import { JHeader } from "./JHeader";
 import { Footer } from "../Components-LandingPage/Footer";
-import "./TechnicalIssues.css"; 
-import PageErrorImg from "../assets/pageerror.png"; 
+import "./TechnicalIssues.css";
+import PageErrorImg from "../assets/pageerror.png";
 
-export default function PageErrorsHelp() {
+export const PageErrorsHelp = () => {
   const pageErrorData = {
     title: "Common Page Errors & Root Causes",
     updatedDate: "Updated 06 Feb 2026",
@@ -80,9 +80,9 @@ export default function PageErrorsHelp() {
         </div>
 
         <div className="technicalhelp-content">
-          <div className="issue-grid">
+          <div className="technicalissue-grid">
             {pageErrorData.issues.map((item, index) => (
-              <div key={index} className="issue-card">
+              <div key={index} className="technicalissue-card">
                 <h3>{item.problem}</h3>
                 <p><strong>Why this error appears:</strong> {item.why}</p>
                 <p><strong>Root Cause:</strong> {item.rootCause}</p>

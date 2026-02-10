@@ -1,10 +1,10 @@
 import React from "react";
-import { JHeader } from "./JHeader"; 
+import { JHeader } from "./JHeader";
 import { Footer } from "../Components-LandingPage/Footer";
-import "./JobEmployerHelp.css"; 
+import "./JobEmployerHelp.css";
 import SubscriptionImg from "../assets/subscriptionissues.png";
 
-export default function SubscriptionIssuesHelp() {
+export const SubscriptionIssuesHelp = () => {
   const subscriptionData = {
     title: "How to resolve subscription issues",
     updatedDate: "Updated 06 Feb 2026",
@@ -37,24 +37,24 @@ export default function SubscriptionIssuesHelp() {
   };
 
   return (
-    <div className="profilehelp-page">
+    <div className="jobemployerhelp-page">
       <JHeader />
-      <div className="profilehelp-container">
-        <h1 className="profilehelp-title">{subscriptionData.title}</h1>
-        <p className="profilehelp-updated">{subscriptionData.updatedDate}</p>
-        <p className="profilehelp-intro">{subscriptionData.intro}</p>
+      <div className="jobemployerhelp-container">
+        <h1 className="jobemployerhelp-title">{subscriptionData.title}</h1>
+        <p className="jobemployerhelp-updated">{subscriptionData.updatedDate}</p>
+        <p className="jobemployerhelp-intro">{subscriptionData.intro}</p>
 
-        <div className="profilehelp-hero">
+        <div className="jobemployerhelp-hero">
           <img
             src={SubscriptionImg}
             alt="Subscription Management Illustration"
-            className="profilehelp-hero-img"
+            className="jobemployerhelp-hero-img"
           />
         </div>
 
-        <div className="profilehelp-content">
+        <div className="jobemployerhelp-content">
           {subscriptionData.sections.map((section, index) => (
-            <div key={index} className="profilehelp-section">
+            <div key={index} className="jobemployerhelp-section">
               <h2>{section.title}</h2>
               {section.list && (
                 <ul>

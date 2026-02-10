@@ -1,18 +1,16 @@
-.profilehelp-page {
+.jobemployerhelp-page {
     margin-top: 102px;
-    background: #f4f6f8;
-    min-height: 100vh;
+
 }
 
-.profilehelp-container {
-    max-width: 920px;
-    margin: 0 auto;
+.jobemployerhelp-container {
+
     background: #ffffff;
     padding: 40px 100px 100px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    
 }
 
-.profilehelp-title {
+.jobemployerhelp-title {
     color: #0f172a;
     margin-bottom: 28px;
     display: flex;
@@ -21,44 +19,44 @@
     font-weight: 700;
 }
 
-.profilehelp-updated {
+.jobemployerhelp-updated {
     font-size: 13px;
     color: #64748b;
     margin-bottom: 20px;
 }
 
-.profilehelp-intro {
+.jobemployerhelp-intro {
     font-size: 15px;
     line-height: 1.7;
     color: #334155;
     margin-bottom: 30px;
 }
 
-.profilehelp-hero {
+.jobemployerhelp-hero {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
 }
 
-.profilehelp-hero-img {
+.jobemployerhelp-hero-img {
     max-width: 500px;
     height: auto;
     border-radius: 8px;
 }
 
-.profilehelp-content h2 {
+.jobemployerhelp-content h2 {
     font-size: 20px;
     font-weight: 600;
     color: #0f172a;
     margin: 32px 0 12px;
 }
 
-.profilehelp-content ul {
+.jobemployerhelp-content ul {
     padding-left: 20px;
     list-style-type: decimal;
 }
 
-.profilehelp-content ul li {
+.jobemployerhelp-content ul li {
     font-size: 15px;
     color: #334155;
     margin-bottom: 14px;

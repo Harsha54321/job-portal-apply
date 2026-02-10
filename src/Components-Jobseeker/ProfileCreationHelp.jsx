@@ -4,7 +4,7 @@ import { Footer } from "../Components-LandingPage/Footer";
 import "./ProfileCreationHelp.css";
 import ProfileHelp from '../assets/profile-help.png'
 
-export default function ProfileCreationHelp() {
+export const ProfileCreationHelp = () => {
 
   const profileHelpData = {
     updatedDate: "Updated 13 Aug 2025",

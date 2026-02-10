@@ -55,18 +55,18 @@ export const RaiseTicket = () => {
         return (
             <div>
                 <JHeader />
-                <div className="status-container">
+                <div className="Raiseticket-status-container">
                     {step === 'loading' ? (
-                        <div className="loader"></div>
+                        <div className="Raiseticket-loader"></div>
                     ) : (
-                        <div className="success-msg">
+                        <div className="Raiseticket-success-msg">
                             <img src={Reportsubmitted} alt="ReportSubmitted" />
                             <h2> Report Submitted Successfully</h2>
 
                         </div>
                     )}
                 </div>
-                <Footer/>
+                <Footer />
             </div>
 
         );
@@ -75,25 +75,25 @@ export const RaiseTicket = () => {
     return (
         <div>
             <JHeader />
-            <div className="main-wrapper">
+            <div className="Raiseticket-main-wrapper">
 
-                <div className="ticket-page">
-                    <div className="ticket-header">
+                <div className="Raiseticket-page">
+                    <div className="Raiseticket-header">
                         <h1>Ticket Raise</h1>
                         <p>We're here to help.</p>
                         <p>Raise a ticket and we'll get back to you soon</p>
                     </div>
 
-                    <div className="ticket-card">
+                    <div className="Raiseticket-card">
                         <form onSubmit={handleSubmitClick}>
 
-                            <div className="form-group">
+                            <div className="Raiseticket-form-group">
                                 <label>Category*</label>
-                                <div className={`custom-select ${showCategory ? 'open' : ''}`} onClick={() => setShowCategory(!showCategory)}>
+                                <div className={`Raiseticket-custom-select ${showCategory ? 'open' : ''}`} onClick={() => setShowCategory(!showCategory)}>
                                     {formData.category || "Select type"}
-                                    <div className="arrow-icon"></div>
+                                    <div className="Raiseticket-arrow-icon"></div>
                                     {showCategory && (
-                                        <ul className="options">
+                                        <ul className="Raiseticket-options">
                                             <li onClick={() => setFormData({ ...formData, category: 'Jobseeker' })}>Jobseeker</li>
                                             <li onClick={() => setFormData({ ...formData, category: 'Employer' })}>Employer</li>
                                         </ul>
@@ -102,13 +102,13 @@ export const RaiseTicket = () => {
                             </div>
 
 
-                            <div className="form-group">
+                            <div className="Raiseticket-form-group">
                                 <label>Subject*</label>
-                                <div className={`custom-select ${showSubject ? 'open' : ''}`} onClick={() => setShowSubject(!showSubject)}>
+                                <div className={`Raiseticket-custom-select ${showSubject ? 'open' : ''}`} onClick={() => setShowSubject(!showSubject)}>
                                     {formData.subject || "Select an issue"}
-                                    <div className="arrow-icon"></div>
+                                    <div className="Raiseticket-arrow-icon"></div>
                                     {showSubject && (
-                                        <ul className="options scrollable">
+                                        <ul className="Raiseticket-options scrollable">
                                             {subjects.map(s => (
                                                 <li key={s} onClick={() => setFormData({ ...formData, subject: s })}>{s}</li>
                                             ))}
@@ -117,50 +117,68 @@ export const RaiseTicket = () => {
                                 </div>
                             </div>
 
-                            <div className="form-group">
+                            <div className="Raiseticket-form-group">
                                 <label>Name*</label>
                                 <input type="text" placeholder="Enter full name" required
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
                             </div>
 
-                            <div className="form-group">
+                            <div className="Raiseticket-form-group">
                                 <label>Email*</label>
                                 <input type="email" placeholder="Enter email ID" required
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
                             </div>
 
-                            <div className="form-group">
+                            <div className="Raiseticket-form-group">
                                 <label>Phone number*</label>
                                 <input type="tel" placeholder="Enter phone number" required
                                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
                             </div>
 
-                            <div className="form-group">
+                            <div className="Raiseticket-form-group">
                                 <label>Message</label>
                                 <textarea placeholder="Describe the issue here..." rows="4"
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}></textarea>
                             </div>
 
-                            <div className="form-group">
+                            <div className="Raiseticket-form-group">
                                 <label>Attachment</label>
-                                <div className="file-input">Click to attach a file</div>
+                                <input
+                                    type="file"
+                                    id="file-upload"
+                                    style={{ display: 'none' }}
+                                    onChange={(e) => setFormData({ ...formData, attachment: e.target.files[0] })}
+                                    accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg"
+                                />
+                                <div
+                                    className="Raiseticket-file-input"
+                                    onClick={() => document.getElementById('file-upload').click()}
+                                >
+                                    {formData.attachment ? (
+                                        <span style={{ color: '#2563eb', fontWeight: '500' }}>
+                                            {formData.attachment.name}
+                                        </span>
+                                    ) : (
+                                        "Click to attach a file"
+                                    )}
+                                </div>
                                 <small className="file-info">Accepted formats: PDF, DOC, DOCX, TXT, PNG, JPG (Max 10MB)</small>
                             </div>
 
-                            <div className="form-actions">
-                                <button type="button" className="btn-cancel" onClick={() => navigate(-1)}>Cancel</button>
-                                <button type="submit" className="btn-submit">Submit</button>
+                            <div className="Raiseticket-form-actions">
+                                <button type="button" className="Raiseticket-btn-cancel" onClick={() => navigate(-1)}>Cancel</button>
+                                <button type="submit" className="Raiseticket-btn-submit">Submit</button>
                             </div>
                         </form>
                     </div>
 
                     {step === 'confirming' && (
-                        <div className="modal-overlay">
-                            <div className="modal">
+                        <div className="Raiseticket-modal-overlay">
+                            <div className="Raiseticket-modal">
                                 <h3>Please confirm before submit</h3>
-                                <div className="modal-buttons">
-                                    <button className="btn-yes" onClick={handleConfirm}>Yes</button>
-                                    <button className="btn-no" onClick={() => setStep('form')}>No</button>
+                                <div className="Raiseticket-modal-buttons">
+                                    <button className="Raiseticket-btn-yes" onClick={handleConfirm}>Yes</button>
+                                    <button className="Raiseticket-btn-no" onClick={() => setStep('form')}>No</button>
                                 </div>
                             </div>
                         </div>

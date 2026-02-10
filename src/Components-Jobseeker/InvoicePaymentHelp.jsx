@@ -1,10 +1,10 @@
 import React from "react";
-import { JHeader } from "./JHeader"; 
+import { JHeader } from "./JHeader";
 import { Footer } from "../Components-LandingPage/Footer";
-import "./JobEmployerHelp.css"; 
+import "./JobEmployerHelp.css";
 import InvoiceImg from "../assets/Invoicepayment.png";
 
-export default function InvoicePaymentHelp() {
+export const InvoicePaymentHelp = () => {
   const paymentData = {
     title: "How to manage invoices and payments",
     updatedDate: "Updated 06 Feb 2026",
@@ -37,24 +37,24 @@ export default function InvoicePaymentHelp() {
   };
 
   return (
-    <div className="profilehelp-page">
+    <div className="jobemployerhelp-page">
       <JHeader />
-      <div className="profilehelp-container">
-        <h1 className="profilehelp-title">{paymentData.title}</h1>
-        <p className="profilehelp-updated">{paymentData.updatedDate}</p>
-        <p className="profilehelp-intro">{paymentData.intro}</p>
+      <div className="jobemployerhelp-container">
+        <h1 className="jobemployerhelp-title">{paymentData.title}</h1>
+        <p className="jobemployerhelp-updated">{paymentData.updatedDate}</p>
+        <p className="jobemployerhelp-intro">{paymentData.intro}</p>
 
-        <div className="profilehelp-hero">
+        <div className="jobemployerhelp-hero">
           <img
             src={InvoiceImg}
             alt="Invoice and Payment Processing Illustration"
-            className="profilehelp-hero-img"
+            className="jobemployerhelp-hero-img"
           />
         </div>
 
-        <div className="profilehelp-content">
+        <div className="jobemployerhelp-content">
           {paymentData.sections.map((section, index) => (
-            <div key={index} className="profilehelp-section">
+            <div key={index} className="jobemployerhelp-section">
               <h2>{section.title}</h2>
               {section.list && (
                 <ul>

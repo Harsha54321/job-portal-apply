@@ -9,15 +9,15 @@ import SendIcon from "../assets/SendIcon.png"
 
 const TypingDots = () => {
   return (
-    <div className="chat-msg bot typing">
-      <span className="dot"></span>
-      <span className="dot"></span>
-      <span className="dot"></span>
+    <div className="Livechat-chat-msg bot typing">
+      <span className="Livechat-dot"></span>
+      <span className="Livechat-dot"></span>
+      <span className="Livechat-dot"></span>
     </div>
   );
 };
 
-const LiveChat = () => {
+export const LiveChat = () => {
   const chatBodyRef = useRef(null);
   const [step, setStep] = useState("INIT");
   const [messages, setMessages] = useState([]);
@@ -94,13 +94,13 @@ const LiveChat = () => {
     <div>
       <JHeader />
 
-      <div className="chat-wrapper">
-        <div className="chat-box">
+      <div className="Livechat-chat-wrapper">
+        <div className="Livechat-chat-box">
           {step === "INIT" && (
-            <div className="start-card">
+            <div className="Livechat-start-card">
               <p>Tell us what's going on</p>
               <button onClick={startConversation}>
-                Start conversation <img className="send-icon" src={SendIcon} alt="SendTo" />
+                Start conversation <img className="Livechat-send-icon" src={SendIcon} alt="SendTo" />
               </button>
             </div>
 
@@ -108,13 +108,13 @@ const LiveChat = () => {
 
           {step !== "INIT" && (
             <>
-              <div className="chat-body" ref={chatBodyRef}>
-                <div className="chat-spacer" />
+              <div className="Livechat-chat-body" ref={chatBodyRef}>
+                <div className="Livechat-chat-spacer" />
 
                 {messages.map((msg, i) => (
                   <div
                     key={i}
-                    className={`chat-msg ${msg.from === "user" ? "user" : "bot"}`}
+                    className={`Livechat-chat-msg ${msg.from === "user" ? "user" : "bot"}`}
                   >
                     <span>{msg.text}</span>
                   </div>
@@ -123,7 +123,7 @@ const LiveChat = () => {
                 {isTyping && <TypingDots />}
 
                 {step === "ENDED" && (
-                  <div className="chat-complete">
+                  <div className="Livechat-chat-complete">
                     <p>Bot has ended your conversation</p>
                   </div>
                 )}
@@ -131,7 +131,7 @@ const LiveChat = () => {
               </div>
 
               {step === "CHAT" && (
-                <div className="chat-input">
+                <div className="Livechat-chat-input">
                   <input
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
@@ -139,19 +139,19 @@ const LiveChat = () => {
                     disabled={isTyping}
                   />
                   <button onClick={handleSend}>
-                    Send <img className="send-icon" src={SendIcon} />
+                    Send <img className="Livechat-send-icon" src={SendIcon} />
                   </button>
-                  <button className="end-btn" onClick={endConversation}>
+                  <button className="Livechat-end-btn" onClick={endConversation}>
                     End
                   </button>
                 </div>
               )}
 
               {step === "ENDED" && (
-                <div className="chat-end-bar">
+                <div className="Livechat-chat-end-bar">
                   <button onClick={startConversation}>
                     Start new conversation
-                    <img className="send-icon" src={SendIcon} />
+                    <img className="Livechat-send-icon" src={SendIcon} />
                   </button>
                 </div>
               )}
@@ -164,15 +164,15 @@ const LiveChat = () => {
         </div>
 
         {showFeedback && (
-          <div className="modal-overlay">
-            <div className="modal">
+          <div className="Livechat-modal-overlay">
+            <div className="Livechat-modal">
               <h3>Share your feedback</h3>
 
-              <div className="stars">
+              <div className="Livechat-stars">
                 {[1, 2, 3, 4, 5].map((num) => (
                   <span
                     key={num}
-                    className="star"
+                    className="Livechat-star"
                     onClick={() => setRating(num)}
                   >
                     <img
@@ -203,4 +203,4 @@ const LiveChat = () => {
   );
 };
 
-export default LiveChat;
+

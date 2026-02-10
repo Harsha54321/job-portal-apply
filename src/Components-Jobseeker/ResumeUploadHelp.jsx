@@ -2,9 +2,9 @@ import React from "react";
 import "./ResumeUploadHelp.css";
 import { JHeader } from "./JHeader";
 import { Footer } from "../Components-LandingPage/Footer";
-import ResumeHelpImg from "../assets/resume-help.png"; 
+import ResumeHelpImg from "../assets/resume-help.png";
 
-export default function ResumeUploadHelp() {
+export const ResumeUploadHelp = () => {
 
   const resumeHelpData = {
     title: "How to Make a Resume",
@@ -96,7 +96,7 @@ export default function ResumeUploadHelp() {
 
   return (
     <div className="resumehelp-page">
-      <JHeader/>
+      <JHeader />
 
       <div className="resumehelp-container">
         <h1 className="resumehelp-title">

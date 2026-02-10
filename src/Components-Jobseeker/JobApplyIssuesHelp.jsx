@@ -2,9 +2,9 @@ import React from "react";
 import "./Jobseekerhelp.css"; // Consolidated CSS file
 import { JHeader } from "./JHeader";
 import { Footer } from "../Components-LandingPage/Footer";
-import JobApplyImg from "../assets/jobapplyissues.png"; 
+import JobApplyImg from "../assets/jobapplyissues.png";
 
-export default function JobApplyIssuesHelp() {
+export const JobApplyIssuesHelp = () => {
   const applyHelpData = {
     title: "How to Apply for a Job",
     updatedDate: "Updated 06 Feb 2026",
@@ -48,25 +48,25 @@ export default function JobApplyIssuesHelp() {
   };
 
   return (
-    <div className="help-page">
+    <div className="Jobseekerhelp-page">
       <JHeader />
 
-      <div className="help-container">
-        <h1 className="help-title">{applyHelpData.title}</h1>
-        <p className="help-updated">{applyHelpData.updatedDate}</p>
-        <p className="help-intro">{applyHelpData.intro}</p>
+      <div className="Jobseekerhelp-container">
+        <h1 className="Jobseekerhelp-title">{applyHelpData.title}</h1>
+        <p className="Jobseekerhelp-updated">{applyHelpData.updatedDate}</p>
+        <p className="Jobseekerhelp-intro">{applyHelpData.intro}</p>
 
-        <div className="help-hero">
+        <div className="Jobseekerhelp-hero">
           <img
             src={JobApplyImg}
             alt="Job application process"
-            className="help-hero-img"
+            className="Jobseekerhelp-hero-img"
           />
         </div>
 
-        <div className="help-content">
+        <div className="Jobseekerhelp-content">
           {applyHelpData.sections.map((section, index) => (
-            <div key={index} className="help-section">
+            <div key={index} className="Jobseekerhelp-section">
               <h2>{section.title}</h2>
               {section.content?.map((text, i) => (
                 <p key={i}>{text}</p>

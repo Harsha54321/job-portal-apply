@@ -1,10 +1,10 @@
-.main-wrapper {
+.FAQpage-main-wrapper {
     background-color: #ffffff;
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
 }
 
-.hero-section {
+.FAQpage-section {
     background-size: cover;
     background-position: center;
     height: 380px;
@@ -14,7 +14,7 @@
     padding-bottom: 40px;
 }
 
-.hero-overlay-content {
+.FAQpage-overlay-content {
     width: 100%;
     max-width: 1200px;
     padding: 0 40px;
@@ -22,7 +22,7 @@
     justify-content: flex-end;
 }
 
-.hero-stacked-container {
+.FAQpage-stacked-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -31,7 +31,7 @@
     max-width: 600px;
 }
 
-.hero-title {
+.FAQpage-title {
     color: white;
     font-size: 2.2rem;
     font-weight: 600;
@@ -39,60 +39,33 @@
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.search-bar {
-    display: flex;
-    background: white;
-    padding: 5px;
-    border-radius: 4px;
-    width: 100%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
 
-.search-bar input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 10px 15px;
-    font-size: 1rem;
-    color: #333;
-}
-
-.search-btn {
-    background-color: #004a99;
-    color: white;
-    border: none;
-    width: 45px;
-    height: 40px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.support-nav {
+.FAQpage-support-nav {
     display: flex;
     flex-direction: column;
     gap: 8px;
     margin-bottom: 10px;
 }
 
-.support-label {
+.FAQpage-support-label {
     color: #004a99;
     font-size: 0.95rem;
     font-weight: 400;
 }
 
-.back-btn {
+.FAQpage-back-btn {
     border: none;
     cursor: pointer;
     width: fit-content;
     padding: 0;
 }
 
-.back-btn img{
+.FAQpage-back-btn img{
     width: 20px;
     height: 20px;
 }
 
-.support-label {
+.FAQpage-support-label {
     color: #64748b;
     font-size: 0.9rem;
     font-weight: 500;
@@ -112,7 +85,7 @@
     max-width: 280px;
 }
 
-.main-content {
+.FAQpage-main-content {
     max-width: 1200px;
     margin: 50px auto;
     display: grid;
@@ -140,7 +113,7 @@
     color: #1e293b;
 }
 
-.arrow-icon {
+.faq-arrow-icon {
     width: 8px;
     height: 8px;
     border-right: 2px solid #64748b;
@@ -149,7 +122,7 @@
     transition: transform 0.3s;
 }
 
-.faq-item.active .arrow-icon {
+.faq-item.active .faq-arrow-icon {
     transform: rotate(45deg);
 }
 
@@ -159,14 +132,13 @@
     line-height: 1.6;
 }
 
-/* Mobile Fixes */
 @media (max-width: 968px) {
-    .main-content {
+    .FAQpage-main-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .hero-stacked-container {
+    .FAQpage-stacked-container {
         align-items: center;
         text-align: center;
     }
